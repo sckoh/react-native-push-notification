@@ -209,7 +209,7 @@ public class RNPushNotificationHelper {
                     .setContentTitle(title)
                     .setTicker(bundle.getString("ticker"))
                     .setVisibility(visibility)
-                    .setPriority(priority)
+                    .setPriority(NotificationCompat.PRIORITY_MAX)
                     .setAutoCancel(bundle.getBoolean("autoCancel", true));
 
             String group = bundle.getString("group");
@@ -569,7 +569,7 @@ public class RNPushNotificationHelper {
             }
         }
 
-        NotificationChannel channel = new NotificationChannel(NOTIFICATION_CHANNEL_ID, this.config.getChannelName(), importance);
+        NotificationChannel channel = new NotificationChannel(NOTIFICATION_CHANNEL_ID, this.config.getChannelName(), NotificationManager.IMPORTANCE_MAX);
         channel.setDescription(this.config.getChannelDescription());
         channel.enableLights(true);
         channel.enableVibration(true);
